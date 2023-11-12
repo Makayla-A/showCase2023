@@ -105,13 +105,15 @@ public class App extends PApplet
 
 	public void settings()
 	{
-		size(500,500);
-	}
+		size(1000,1000);
+	} 
 
 	public void draw()
 	{
 		background(0);
 		//rect(width/2, height/2, 50, 50);
+		gameCube.draw();
+		gameCube.StartScreen();
 		gameCube.draw();
 	}
 

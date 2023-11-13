@@ -165,5 +165,13 @@ public class UnitTests
 
 	}
 
+	public void Showcase()
+	{
+		MarkovChainGenerator<Integer> pitchGen = new MarkovChainGenerator<Integer>();
+		pitchGen.train(midiNotes.getPitchArray()); 
+		
+
+	}
+
 
 }

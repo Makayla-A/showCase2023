@@ -55,10 +55,14 @@ public class GeometryDash
     //     }
     // }
 
-    // void obstacles(E note)
-    // {
+     void obstacles(int generatedNote)
+     {
+        //mod by 12
+        //reduce to nearest whole note
+        //call functions based on the note
 
-    // }
+
+    }
 
     void draw()
     {

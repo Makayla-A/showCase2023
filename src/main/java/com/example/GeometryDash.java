@@ -60,6 +60,8 @@ public class GeometryDash
         //mod by 12
         //reduce to nearest whole note
         //call functions based on the note
+        myMain.println("this is the note: ");
+        myMain.println(generatedNote);
 
 
     }

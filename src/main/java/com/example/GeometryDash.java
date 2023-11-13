@@ -126,11 +126,17 @@ public class GeometryDash
         //this function is gonna be the bulk of the program
 
     }
-    //make triangle
+    //make triangles aka spikes
     void triangle()
     {
         //myMain.triangle(120, 300, 232, 80, 344, 300);
-        myMain.triangle(60,150,116,40,172,150);
+       // myMain.triangle(60,150,116,40,172,150);
+        //myMain.triangle(30,75, 58, 20, 86,75);
+        //myMain.triangle(15,38, 29, 10, 43, 38); // good size, just need to fix position
+        myMain.translate(600, 500); //puts it on the far right side of the screen
+        myMain.triangle(15,38, 29, 10, 43, 38);
+      // myMain.triangle(0, 38, 0, 10, 0, 38);
+
     }
 
     //make floating block?

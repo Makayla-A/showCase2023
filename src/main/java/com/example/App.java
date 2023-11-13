@@ -120,11 +120,11 @@ public class App extends PApplet
 
 
 
-		MarkovChainGenerator<Integer> pitchGen = new MarkovChainGenerator<Integer>();
-		pitchGen.train(midiNotes.getPitchArray()); 
+		// MarkovChainGenerator<Integer> pitchGen = new MarkovChainGenerator<Integer>();
+		// pitchGen.train(midiNotes.getPitchArray()); 
 		//uhhhhhhh isn't this going to be in a for loop
-		int note = pitchGen.generate(1).get(0);
-		gameCube.obstacles(note);
+		// int note = pitchGen.generate(1).get(0);
+		// gameCube.obstacles(note);
 
 
 	//	ShakeItOff.mid.length();

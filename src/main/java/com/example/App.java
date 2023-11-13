@@ -112,9 +112,12 @@ public class App extends PApplet
 	{
 		background(0);
 		//rect(width/2, height/2, 50, 50);
-		gameCube.draw();
-		gameCube.StartScreen();
-		gameCube.draw();
+		//gameCube.draw();
+		//gameCube.StartScreen();
+		//gameCube.draw();
+		gameCube.startGame();
+		gameCube.triangle();
+
 	}
 
 	// plays the midi file using the player -- so sends the midi to an external

@@ -60,8 +60,20 @@ public class GeometryDash
         //mod by 12
         //reduce to nearest whole note
         //call functions based on the note
-        myMain.println("this is the note: ");
-        myMain.println(generatedNote);
+       // myMain.println("this is the note: ");
+       // myMain.println(generatedNote);
+
+        int letter = generatedNote % 12;
+
+        if (letter == 0 || letter == 1)
+        {
+            triangle();
+        }
+        else if (letter == 2 )
+        {
+
+        }
+
 
 
     }

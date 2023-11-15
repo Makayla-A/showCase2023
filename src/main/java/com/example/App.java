@@ -38,6 +38,7 @@ public class App extends PApplet
 
 	
 	GeometryDash gameCube = new GeometryDash(this);
+	icon myIcon1 = new icon(this);
 	public static void main(String[] args) 
 	{
 
@@ -101,24 +102,57 @@ public class App extends PApplet
 		// form you need for the assignment
 
 		midiSetup(filePath);
+
+		//MAKE MARKOV HERE
+		MarkovChainGenerator<Integer> pitchGen = new MarkovChainGenerator<Integer>();
+		MarkovChainGenerator<Double> rhythmGen = new MarkovChainGenerator<Double>();
+
+		//MarkovChainGenerator's train() function is called on both PitchGen and RhythmGen
+		pitchGen.train(midiNotes.getPitchArray()); 
+		rhythmGen.train(midiNotes.getRhythmArray());
+
+		//MarkovChainGenerator's generate() function is called on both trainPitch and trainRhythm to create a melody based on .train's probabilty distribution
+		ArrayList<Integer> pitches = pitchGen.generate(200);
+		ArrayList<Double> rhythms = rhythmGen.generate(200);
+
+		// sets the player to the melody and rhythm respectively
+		player.setMelody(pitches);
+		player.setRhythm(rhythms);
+
+		background(0);
+
 	}
 
 	public void settings()
 	{
 		size(1000,1000);
+		
+	
+
 	} 
 
 	public void draw()
 	{
-		background(0);
+		// background(0);
+
 		//rect(width/2, height/2, 50, 50);
 		//gameCube.draw();
 		//gameCube.StartScreen();
 		//gameCube.draw();
-		gameCube.startGame();
-		gameCube.triangle();
+
+		//gameCube.startGame();
+		//gameCube.triangle();
 
 
+		int note = playMelody();
+		if (note != -1)	
+		{
+			println(note);
+			//gameCube.obstacles(note);
+			myIcon1.setNote(note);
+			myIcon1.move();
+		}
+		myIcon1.draw();
 
 		// MarkovChainGenerator<Integer> pitchGen = new MarkovChainGenerator<Integer>();
 		// pitchGen.train(midiNotes.getPitchArray()); 
@@ -132,17 +166,18 @@ public class App extends PApplet
 
 	// plays the midi file using the player -- so sends the midi to an external
 	// synth such as Kontakt or a DAW like Ableton or Logic
-	static public void playMelody() 
+	static public Integer playMelody() 
 	{
 
 		assert (player != null); // this will throw an error if player is null -- eg. if you haven't called
 									// setup() first
 
-		while (!player.atEndOfMelody()) 
+		if (!player.atEndOfMelody()) 
 		{
-			player.play(); // play each note in the sequence -- the player will determine whether is time
+			return player.play(); // play each note in the sequence -- the player will determine whether is time
 							// for a note onset
 		}
+		return -1;
 
 	}
 

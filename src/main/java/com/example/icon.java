@@ -35,6 +35,36 @@ public class icon
             mainClass.rect(x, y, 50, 50);
             mainClass.fill(0, 128, 128);
         }
+        if (letter == 2 || letter == 3)
+        {
+            mainClass.ellipse(x, y, 50, 50);
+            mainClass.fill(242, 212, 215);
+        }
+        if (letter == 4 || letter == 5)
+        {
+            mainClass.rect(x, y, 50, 50);
+            mainClass.fill(159, 226, 191);
+        }
+        if (letter == 6 || letter == 7)
+        {
+            mainClass.ellipse(x, y, 50, 50);
+            mainClass.fill(230, 230, 250);
+        }
+        if (letter == 8 || letter == 9)
+        {
+            mainClass.rect(x, y, 50, 50);
+            mainClass.fill(253, 94, 83);
+        }
+        if (letter == 10 || letter == 11)
+        {
+            mainClass.ellipse(x, y, 50, 50);
+            mainClass.fill(227, 194, 163);
+        }
+
+
+        //missing a note??
+
+
        // mainClass.rect(x, y, 50, 50);
 
     }

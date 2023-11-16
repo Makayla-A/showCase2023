@@ -119,7 +119,7 @@ public class App extends PApplet
 		player.setMelody(pitches);
 		player.setRhythm(rhythms);
 
-		background(0);
+		//background(0);
 
 	}
 
@@ -133,7 +133,7 @@ public class App extends PApplet
 
 	public void draw()
 	{
-		// background(0);
+		 background(0);
 
 		//rect(width/2, height/2, 50, 50);
 		//gameCube.draw();
@@ -153,6 +153,8 @@ public class App extends PApplet
 			myIcon1.move();
 		}
 		myIcon1.draw();
+
+		//want them to bounce!
 
 		// MarkovChainGenerator<Integer> pitchGen = new MarkovChainGenerator<Integer>();
 		// pitchGen.train(midiNotes.getPitchArray()); 

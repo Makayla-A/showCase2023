@@ -35,7 +35,7 @@ public class icon
       //  x = x + speed;
     }
 
-    void draw()
+    void instances()
     {
         int letter = note % 12;
 
@@ -91,6 +91,13 @@ public class icon
        // mainClass.rect(x, y, 50, 50);
 
     }
+
+    void draw()
+    {
+        instances();
+    }
+
+
 
 
     //i'm going to make the triangles bounce across the screen. they will be filled with different colors based on the note. run for 30 secs

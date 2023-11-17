@@ -150,7 +150,7 @@ public class App extends PApplet
 			println(note);
 			//gameCube.obstacles(note);
 			myIcon1.setNote(note);
-			myIcon1.move();
+			//myIcon1.move();
 		}
 		myIcon1.draw();
 

@@ -119,13 +119,14 @@ public class App extends PApplet
 		player.setMelody(pitches);
 		player.setRhythm(rhythms);
 
-		//background(0);
+	//	background(0);
 
 	}
 
 	public void settings()
 	{
 		size(1000,1000);
+		//fullScreen();
 		
 	
 
@@ -133,37 +134,44 @@ public class App extends PApplet
 
 	public void draw()
 	{
-		 background(0);
-
-		//rect(width/2, height/2, 50, 50);
-		//gameCube.draw();
-		//gameCube.StartScreen();
-		//gameCube.draw();
-
-		//gameCube.startGame();
-		//gameCube.triangle();
+		background(0);
 
 
+		ArrayList <icon> myIcons = new ArrayList<>();
 		int note = playMelody();
 		if (note != -1)	
 		{
 			println(note);
 			//gameCube.obstacles(note);
-			myIcon1.setNote(note);
-			//myIcon1.move();
+			icon newIcon = new icon(this);
+			newIcon.setNote(note);
+			myIcons.add(newIcon);
+
+
+			//myIcon1.setNote(note);
+			//myIcons.add(myIcon1);
+			///myIcon1.move();
 		}
-		myIcon1.draw();
+		//myIcon1.draw();
+		//for (int i = 0; i < myIcons.size(); i++)
+		//{
+			//myIcon1.draw();
+			//myIcon1.move();
+			//myIcon1.move(myIcon1);
+		//}
 
-		//want them to bounce!
+		// for (int i = 0; i < myIcons.size(); i++)
+		// {
+		// 	icon curr = myIcons.get(i);
+		// 	curr.draw();
+		// 	curr.move(curr);
+		// }
+		for (icon currentIcon : myIcons)
+		{
+			currentIcon.draw();
+			currentIcon.move(currentIcon);
+		}
 
-		// MarkovChainGenerator<Integer> pitchGen = new MarkovChainGenerator<Integer>();
-		// pitchGen.train(midiNotes.getPitchArray()); 
-		//uhhhhhhh isn't this going to be in a for loop
-		// int note = pitchGen.generate(1).get(0);
-		// gameCube.obstacles(note);
-
-
-	//	ShakeItOff.mid.length();
 	}
 
 	// plays the midi file using the player -- so sends the midi to an external

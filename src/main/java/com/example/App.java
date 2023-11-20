@@ -24,6 +24,7 @@ import processing.core.*;
 //make sure this class name matches your file name, if not fix.
 public class App extends PApplet
 {
+	ArrayList<icon> myIcons;
 
 	static MelodyPlayer player; // play a midi sequence
 	static MidiFileToNotes midiNotes; // read a midi file
@@ -120,6 +121,7 @@ public class App extends PApplet
 		player.setRhythm(rhythms);
 
 	//	background(0);
+	
 
 	}
 
@@ -127,6 +129,7 @@ public class App extends PApplet
 	{
 		size(1000,1000);
 		//fullScreen();
+		myIcons = new ArrayList<>();
 		
 	
 
@@ -137,7 +140,7 @@ public class App extends PApplet
 		background(0);
 
 
-		ArrayList <icon> myIcons = new ArrayList<>();
+		//ArrayList <icon> myIcons = new ArrayList<>();
 		int note = playMelody();
 		if (note != -1)	
 		{
@@ -145,7 +148,8 @@ public class App extends PApplet
 			//gameCube.obstacles(note);
 			icon newIcon = new icon(this);
 			newIcon.setNote(note);
-			myIcons.add(newIcon);
+			 myIcons.add(newIcon);
+			
 
 
 			//myIcon1.setNote(note);
@@ -171,6 +175,8 @@ public class App extends PApplet
 			currentIcon.draw();
 			currentIcon.move(currentIcon);
 		}
+
+	
 
 	}
 

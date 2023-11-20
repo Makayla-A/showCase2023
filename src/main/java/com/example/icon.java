@@ -30,6 +30,8 @@ public class icon
     icon(PApplet main)
     {
         mainClass =main;
+        xpos = mainClass.random(0, 1000);
+        ypos = mainClass.random(0,1000);
     }
     
     void setNote( int generatedNote)
@@ -73,9 +75,9 @@ public class icon
 
        // xpos = xpos + (xSpeed * xDirection);
        //xpos = mainClass.random(mainClass.width);
-       xpos = mainClass.random(0, 1000);
+      // xpos = mainClass.random(0, 1000);
       // ypos = mainClass.random(mainClass.height);
-       ypos = mainClass.random(0, 1000);
+      // ypos = mainClass.random(0, 1000);
 
 
        // ypos = ypos + (ySpeed * YDirection);

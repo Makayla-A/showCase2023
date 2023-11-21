@@ -2,7 +2,7 @@
  * NAME: Makayla Alston
  * COURSE: CRCP 3315 001-1237
  * INSTRUCTOR: Professor Courtney Brown
- * DATE: Oct 19, 2023
+ * DATE: Nov 2023
  * DESCRIPTION: A generic class called ProbabilityGenerator, which utilizes ArrayLists to accept input in the form of MIDI music files, records the unique tokens 
  * found in the input file and documents the number of instances each note has occured. Creates a probability distribution from this data -- that is, divides the
  * instances of each note by the total number of notes to estimate the probability of a given note being the next to occur in a given song. Prints the output

@@ -8,7 +8,7 @@
  * NAME: Makayla Alston
  * COURSE: CRCP 3315 001-1237
  * INSTRUCTOR: Professor Courtney Brown
- * DATE: Oct 19, 2023
+ * DATE: Nov 2023
  * DESCRIPTION: Partial functionality of the MidiBus class, from https://github.com/sparks/themidibus/
  * The fastest way to get the functionality given use of Maven + Git Education tech, as previously was using this processing library. Only checks/uses midi outputs to make things 
  * simple -- only using the output for class projects.

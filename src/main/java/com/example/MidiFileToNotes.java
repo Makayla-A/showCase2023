@@ -2,7 +2,7 @@
  * NAME: Makayla Alston
  * COURSE: CRCP 3315 001-1237
  * INSTRUCTOR: Professor Courtney Brown
- * DATE: Oct 19, 2023
+ * DATE: Nov 2023
  * DESCRIPTION: Uses JMusic to get notes & info from a midi file
  * CREDIT: Professor Courtney Brown (author of: MidiFileToNotes(String f); void setWhichLine(int line); void processPitchesAsTokens(); public Integer[] getPitches();
  * public ArrayList<Integer> getPitchArray(); public ArrayList<Double> getRhythmArray(); public ArrayList<jm.music.data.Note> getMelody(); public Double[] getRhythms()) 

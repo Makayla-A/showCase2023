@@ -1,9 +1,12 @@
-/*
- * c2017-c2023 Courtney Brown 
- * 
- * Class: MelodyPlayer
+ /*
+ * NAME: Makayla Alston
+ * COURSE: CRCP 3315 001-1237
+ * INSTRUCTOR: Professor Courtney Brown
+ * DATE: Nov 2023
  * Description: Sends a melody of midi notes to an external player/midi channel
- * 
+ * CREDIT: Professor Courtney Brown (author of: MelodyPlayer(float tempo, String bus); void setMelody(ArrayList<Integer> m); void setRhythm(ArrayList<Double> r);
+ * void listDevices(); void setupMidi(); void setBPM(float tempo); int millis(); Integer play(); void reset(); boolean atEndOfMelody())
+ * CLASS: MelodyPlayer.java 
  */
 
  package com.example;

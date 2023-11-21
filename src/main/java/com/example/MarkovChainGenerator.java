@@ -2,7 +2,7 @@
  * NAME: Makayla Alston
  * COURSE: CRCP 3315 001-1237
  * INSTRUCTOR: Professor Courtney Brown
- * DATE: Oct 19, 2023
+ * DATE: Nov 2023
  * DESCRIPTION: A generic class called MarkoveChainGenerator, which generates notes for a melody based on the note that comes before it
  * CREDIT: Professor Courtney Brown (author of: protected class SortTTOutput; public SortTTOutput sortTT(ArrayList<E> symbols, ArrayList<ArrayList<Float>> tt); 
  * public void printProbabilityDistribution(boolean round, ArrayList<E> symbols, ArrayList<ArrayList<Float>> tt); 

@@ -2,7 +2,7 @@
  * NAME: Makayla Alston
  * COURSE: CRCP 3315 001-1237
  * INSTRUCTOR: Professor Courtney Brown
- * DATE: Oct 19, 2023
+ * DATE: Nov 2023
  * Description: This is a template for the project 2 code, which is an implementation of a Markov chain of order 1
  * CREDIT: Professor Courtney Brown (author of: public static void main(String[] args); public static void setup(); static public void playMelody(); 
  * static void midiSetup(String filePath); static void resetMelody(); static void playMidiFileDebugTest(String filename))
@@ -24,6 +24,7 @@ import processing.core.*;
 //make sure this class name matches your file name, if not fix.
 public class App extends PApplet
 {
+	//initalizes an arrayList that holds the type icon. This is a global variable
 	ArrayList<icon> myIcons;
 
 	static MelodyPlayer player; // play a midi sequence
@@ -37,8 +38,8 @@ public class App extends PApplet
 	static String filePath = "mid"  + sys.getSeparator() +  "ShakeItOff.mid"; // path to the midi file -- you can change this to your file
 															// location/name
 
-	
-	GeometryDash gameCube = new GeometryDash(this);
+
+	//creates an instance of my icon class, which represents the notes on the screen
 	icon myIcon1 = new icon(this);
 	public static void main(String[] args) 
 	{
@@ -104,7 +105,7 @@ public class App extends PApplet
 
 		midiSetup(filePath);
 
-		//MAKE MARKOV HERE
+		//creation of a pitch generator and a rhythm generator, both ArrayLists. Pitchgen is an ArrayList of integers. RhythmGen is an ArrayList of doubles
 		MarkovChainGenerator<Integer> pitchGen = new MarkovChainGenerator<Integer>();
 		MarkovChainGenerator<Double> rhythmGen = new MarkovChainGenerator<Double>();
 
@@ -120,15 +121,16 @@ public class App extends PApplet
 		player.setMelody(pitches);
 		player.setRhythm(rhythms);
 
-	//	background(0);
-	
 
 	}
 
 	public void settings()
 	{
+		//sets the size of the processing sketch screen
 		size(1000,1000);
 		//fullScreen();
+
+		//creates an new arrayList called myIcons
 		myIcons = new ArrayList<>();
 		
 	
@@ -139,40 +141,27 @@ public class App extends PApplet
 	{
 		background(0);
 
-
-		//ArrayList <icon> myIcons = new ArrayList<>();
+		//holds the value of the note returned from the function playMelody()
 		int note = playMelody();
+		//if a note is playing, this if statement is entered
 		if (note != -1)	
 		{
 			println(note);
-			//gameCube.obstacles(note);
+
+			//creates a new instance of an icon
 			icon newIcon = new icon(this);
+			//calls the function setNote() in the icon class and passes the value of the integer note
 			newIcon.setNote(note);
+			//adds the icon to the arrayList myIcons
 			 myIcons.add(newIcon);
-			
-
-
-			//myIcon1.setNote(note);
-			//myIcons.add(myIcon1);
-			///myIcon1.move();
 		}
-		//myIcon1.draw();
-		//for (int i = 0; i < myIcons.size(); i++)
-		//{
-			//myIcon1.draw();
-			//myIcon1.move();
-			//myIcon1.move(myIcon1);
-		//}
-
-		// for (int i = 0; i < myIcons.size(); i++)
-		// {
-		// 	icon curr = myIcons.get(i);
-		// 	curr.draw();
-		// 	curr.move(curr);
-		// }
+		
+		//range based for loop that iterates through the arrayList of icons called myIcons
 		for (icon currentIcon : myIcons)
 		{
+			//draws the current icon
 			currentIcon.draw();
+			//calls the icon class's move function and passes the current icon as a parameter
 			currentIcon.move(currentIcon);
 		}
 

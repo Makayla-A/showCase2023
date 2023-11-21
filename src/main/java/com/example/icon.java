@@ -1,15 +1,22 @@
-package com.example;
+/*
+ * NAME: Makayla Alston
+ * COURSE: CRCP 3315 001-1237
+ * INSTRUCTOR: Professor Courtney Brown
+ * DATE: Nov 2023
+ * Description: This is a class that creates icons, which represents a given MIDI note 
+ * CLASS: icon.java 
+ */
+
+ package com.example;
 
 import processing.core.PApplet;
 
 public class icon 
 {
-   // float x = 0;
-    //float y = 100;
-   // float speed = 5;
 
+    //radius of an icon
     int rad;
-    //coordinates
+    // handle's an icon's x and y coordinates
     float xpos, ypos;
     //spped along x axis
     float xSpeed = 1;
@@ -23,10 +30,11 @@ public class icon
     double gravity = 0.1;
     //velocity
     float velocity=0;
-
+    //value of a given MIDI note
     int note;
     PApplet mainClass;
 
+    //icon's constructor
     icon(PApplet main)
     {
         mainClass =main;
@@ -34,127 +42,92 @@ public class icon
         ypos = mainClass.random(0,1000);
     }
     
+    // sets each icon's assigned note
     void setNote( int generatedNote)
 
     {
         note = generatedNote;
     }
 
-    void move() //attempt 1
-    {
-      //should make it fall down
-     // YDirection += gravity;
-      //YDirection += ySpeed;
-      //make it bounce
-     // if (YDirection > (mainClass.height))
-      //{
-       // YDirection *= -1;
-      //}
-    }
 
+    //bounces the icons
     void move(icon example)
     {
+        //increments velocity by the value of gravity
         example.velocity += example.gravity;
+        //increments the icon's y position by the value of velocity
         example.ypos += example.velocity;
+        //if the icon's y posistion exceeds the screen's height
         if (example.ypos > mainClass.height - example.rad / 2)
         {
+            //chanes the velocity, multiplies the value by -0.9 so the icon reverses direction
             example.velocity *= -0.9;
+            //updates icon's y position
             example.ypos = mainClass.height - example.rad / 2;
         }
 
     }
-
-    
-      
-
-    
-
+ 
+    //creates the icons
     void instances()
     {
+        //mods the MIDI note by 12 to retrieve the nearest whole note
         int letter = note % 12;
 
-       // xpos = xpos + (xSpeed * xDirection);
-       //xpos = mainClass.random(mainClass.width);
-      // xpos = mainClass.random(0, 1000);
-      // ypos = mainClass.random(mainClass.height);
-      // ypos = mainClass.random(0, 1000);
-
-
-       // ypos = ypos + (ySpeed * YDirection);
-
+       //resets the icon's x position if it exceeds the boundaries of the screen
         if (xpos > mainClass.width || xpos < 0)
         {
-           // xDirection *= -1;
-           //xpos *= -1;
            xpos = 0;
-
         }
+        //resets the icon's y position if it exceeds the boundaries of the screen
         if (ypos > mainClass.height || ypos < 0)
         {
-            //YDirection *= -1;
-            //ypos *= -1;
             ypos = 0;
         }
 
-
+        //if statements that draw and fill shapes (icons) depending on the nearesst whole note
         if (letter == 0 || letter == 1)
         {
-           // mainClass.rect(x, y, 50, 50);
             mainClass.rect(xpos, ypos, 50, 50);
-           // mainClass.rotate(mainClass.PI);
             mainClass.fill(0, 128, 128);
-           // move();
         }
         if (letter == 2 || letter == 3)
         {
             mainClass.ellipse(xpos + 20, ypos + 20, 50, 50);
             mainClass.fill(242, 212, 215);
-           // move();
         }
         if (letter == 4 || letter == 5)
         {
             mainClass.rect(xpos + 30, ypos + 30, 50, 50);
             mainClass.fill(159, 226, 191);
-          //  move();
         }
         if (letter == 6 || letter == 7)
         {
             mainClass.ellipse(xpos + 40, ypos + 40, 50, 50);
             mainClass.fill(230, 230, 250);
-           // move();
         }
         if (letter == 8 || letter == 9)
         {
             mainClass.rect(xpos + 50, ypos + 50, 50, 50);
             mainClass.fill(253, 94, 83);
-           // move();
         }
         if (letter == 10 || letter == 11)
         {
             mainClass.ellipse(xpos + 60, ypos + 60, 50, 50);
             mainClass.fill(227, 194, 163);
-           // move();
         }
 
+        //calls the move() function
         move(this);
-
-        //missing a note??
-
-
-       // mainClass.rect(x, y, 50, 50);
 
     }
 
  
 
+    //calls the instances() function multiple times
     void draw()
     {
         instances();
     }
 
-
-
-
-    //i'm going to make the triangles bounce across the screen. they will be filled with different colors based on the note. run for 30 secs
-    //adapt constructor to accept an integer parameter. write a function to set it. fill based on the parameter
 }
